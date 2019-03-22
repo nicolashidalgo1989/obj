@@ -211,79 +211,89 @@ var map = {
 			mail: [ 'peru@bm-maritima.pe' ] 
 		},
 		{
+
 			name : 'Paita',
 			dir: [
 				'Jr. Independencia 167, Paita',
-				'Branch Manager: Martin Coronado'
 			],
+			agent: 'Martin Coronado',
 			phone: [ '+73 253 341' ],
 			mail: [ 'paita@bm-maritima.pe' ] 
+
 		},
 		{
+
 			name : 'Bayovar',
 			dir: [
-				'Jr. Independencia 167, Paita',
-				'Branch Manager: Martin Coronado'
+				'Jr. Independencia 167, Paita' 
 			],
+			agent: 'Martin Coronado',
 			phone: [ '+73 253 341' ],
 			mail: [ 'bayovar@bm-maritima.pe' ] 
+
 		},
 		{
+
 			name : 'Salaverry',
 			dir: [
-				'Calle Libertad 647, Salaverry',
-				'Branch Manager: Alberto Delgado'
+				'Calle Libertad 647, Salaverry'
 			],
+			agent: 'Alberto Delgado',
 			phone: [ '+44 468 004' ],
 			mail: [ 'salaverry@bm-maritima.pe' ] 
 
 		},
 		{
+
 			name : 'Supe',
 			dir: [
-				'Jr. Tacna 150-B Nueva Victoria, Supe',
-				'Branch Manager: Carlos Chirito'
+				'Jr. Tacna 150-B Nueva Victoria, Supe' 
 			],
+			agent: 'Carlos Chirito',
 			phone: [ '+ 51 978 215 276' ],
 			mail: [ 'supe@bm-maritima.pe' ] 
 
 		},
 		{
+
 			name : 'Callao',
 			dir: [
-				'Av. Sáenz Peña 284 Int. 603, Callao',
-				'Branch Manager: Carlos Chirito'
+				'Av. Sáenz Peña 284 Int. 603, Callao' 
 			],
+			agent: 'Carlos Chirito',
 			phone: [ '+ 51 1 399 6822' ],
 			mail: [ 'callao@bm-maritima.pe' ]
 
 		},
 		{
+
 			name : 'Conchan',
 			dir: [
-				'Av. Sáenz Peña 284 Int. 603, Callao',
-				'Branch Manager: Carlos Chirito'
+				'Av. Sáenz Peña 284 Int. 603, Callao'
 			],
+			agent: 'Carlos Chirito',
 			phone: [ '+ 51 1 399 6822' ],
 			mail: [ 'conchan@bm-maritima.pe' ]
 
 		},
 		{
+
 			name : 'Pisco',
 			dir: [
-				'Punta Pejerrey Km 40, Paracas, Pisco',
-				'Branch Manager: Jose Alex Lopez'
+				'Punta Pejerrey Km 40, Paracas, Pisco'
 			],
+			agent: 'Jose Alex Lopez',
 			phone: [ '+51 963 963 831' ],
 			mail: [ 'pisco@bm-maritima.pe' ]
 
 		},
 		{
+
 			name : 'Matarani',
 			dir: [
-				'Avis Bahía del Puerto D-01, Islay, Mollendo',
-				'Branch Manager: Christian Biese'
+				'Avis Bahía del Puerto D-01, Islay, Mollendo' 
 			],
+			agent: 'Christian Biese',
 			phone: [ '+51 944 899 844' ],
 			mail: [ 'matarani@bm-maritima.pe' ]
 
@@ -341,7 +351,7 @@ function sucursales(){
 			sucursal.appendChild(titulo);
 			sucursal.appendChild(list);
 
-			titulo.innerHTML = map[pais][i].name;
+			titulo.innerHTML = map[pais][i].name.toUpperCase();
 
 			var item1 = document.createElement('li');
 			item1.classList.add( 'dir' );
@@ -388,7 +398,11 @@ function sucursales(){
 				var item4 = document.createElement('li');
 				item4.classList.add( 'agent' );
 				list.append(item4);
-				item4.innerHTML = 'Agent : ' + map[pais][i].agent;
+				if( pais === 'chile' ){ 
+					item4.innerHTML = 'Agent : ' + map[pais][i].agent;
+				}else{  
+					item4.innerHTML = 'Branch Manager : ' + map[pais][i].agent;
+				}
 
 			}
 
