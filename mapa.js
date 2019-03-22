@@ -199,6 +199,94 @@ var map = {
 			],  
 			phone: [ '73 253 341' ], 
 			mail: [ 'bayovar', 'martin.coronado' ]
+		},
+		{
+			name : 'Lima',
+			dir: [
+				'San Isidro - Head Office',
+				'German Schreiber 184, 03rd Floor Office 301',
+				'San Isidro-Lima'
+			],
+			phone: [ '1 221 5052' ],
+			mail: [ 'peru@bm-maritima.pe' ] 
+		},
+		{
+			name : 'Paita',
+			dir: [
+				'Jr. Independencia 167, Paita',
+				'Branch Manager: Martin Coronado'
+			],
+			phone: [ '+73 253 341' ],
+			mail: [ 'paita@bm-maritima.pe' ] 
+		},
+		{
+			name : 'Bayovar',
+			dir: [
+				'Jr. Independencia 167, Paita',
+				'Branch Manager: Martin Coronado'
+			],
+			phone: [ '+73 253 341' ],
+			mail: [ 'bayovar@bm-maritima.pe' ] 
+		},
+		{
+			name : 'Salaverry',
+			dir: [
+				'Calle Libertad 647, Salaverry',
+				'Branch Manager: Alberto Delgado'
+			],
+			phone: [ '+44 468 004' ],
+			mail: [ 'salaverry@bm-maritima.pe' ] 
+
+		},
+		{
+			name : 'Supe',
+			dir: [
+				'Jr. Tacna 150-B Nueva Victoria, Supe',
+				'Branch Manager: Carlos Chirito'
+			],
+			phone: [ '+ 51 978 215 276' ],
+			mail: [ 'supe@bm-maritima.pe' ] 
+
+		},
+		{
+			name : 'Callao',
+			dir: [
+				'Av. Sáenz Peña 284 Int. 603, Callao',
+				'Branch Manager: Carlos Chirito'
+			],
+			phone: [ '+ 51 1 399 6822' ],
+			mail: [ 'callao@bm-maritima.pe' ]
+
+		},
+		{
+			name : 'Conchan',
+			dir: [
+				'Av. Sáenz Peña 284 Int. 603, Callao',
+				'Branch Manager: Carlos Chirito'
+			],
+			phone: [ '+ 51 1 399 6822' ],
+			mail: [ 'conchan@bm-maritima.pe' ]
+
+		},
+		{
+			name : 'Pisco',
+			dir: [
+				'Punta Pejerrey Km 40, Paracas, Pisco',
+				'Branch Manager: Jose Alex Lopez'
+			],
+			phone: [ '+51 963 963 831' ],
+			mail: [ 'pisco@bm-maritima.pe' ]
+
+		},
+		{
+			name : 'Matarani',
+			dir: [
+				'Avis Bahía del Puerto D-01, Islay, Mollendo',
+				'Branch Manager: Christian Biese'
+			],
+			phone: [ '+51 944 899 844' ],
+			mail: [ 'matarani@bm-maritima.pe' ]
+
 		}
 	]
 
