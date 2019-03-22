@@ -1,4 +1,5 @@
 var map = {
+
 	'chile' : [
 		{
 			name: 'SANTIAGO - HEAD OFFICE',
@@ -147,8 +148,9 @@ var map = {
 			agent: 'Ricardo Cárcamo',
 			phone: [ '9 9546 5226' ], 
 			mail: [ 'magellan' ]
-		}
+		} 
 	],
+
 	'peru' : [ 
 		{
 			name: 'LIMA - HEAD OFFICE',
@@ -199,6 +201,7 @@ var map = {
 			mail: [ 'bayovar', 'martin.coronado' ]
 		}
 	]
+
 };
 
 var tabs = document.getElementById('box-lugares').children[0];
@@ -217,6 +220,13 @@ function tab(){
 		var acc = document.createElement('div');
 		tabs.parentElement.parentElement.appendChild(acc);
 		acc.classList.add( 'acordeon', loc );
+
+		if( acc.classList.contains('peru') ){
+
+			acc.style.display = 'none';
+
+		}
+	
 	}
 
 	tabs.children[0].classList.add('active');
@@ -227,15 +237,13 @@ function sucursales(){
  
 	var acordeon = document.querySelectorAll('.acordeon'); 
 
- 	for( suc in map ){
-
- 		console.log( suc, ' : ', map[suc].length );
-  
- 		for(var i = 0; map[suc].length > i; i++){
+ 	for( pais in map ){ 
+ 
+ 		for ( var i = 0; map[pais].length > i; i++ ) {
 
 			var sucursal = document.createElement('div'); 
 
-			if( suc === 'chile' ){ acordeon[0].appendChild(sucursal) } else { acordeon[1].appendChild(sucursal) }
+			if( pais === 'chile' ){ acordeon[0].appendChild(sucursal) } else { acordeon[1].appendChild(sucursal) }
 
 			sucursal.classList.add('sucursal');
 
@@ -245,67 +253,71 @@ function sucursales(){
 			sucursal.appendChild(titulo);
 			sucursal.appendChild(list);
 
-			titulo.innerHTML = map[suc][i].name;
+			titulo.innerHTML = map[pais][i].name;
 
-		}
+			var item1 = document.createElement('li');
+			item1.classList.add( 'dir' );
+			list.append(item1);
+
+			for( var d = 0; map[pais][i].dir.length > d; d++){
+ 
+				var span = document.createElement('span');
+				item1.append(span);
+				span.innerHTML = map[pais][i].dir[d] + '<br>'; 
+
+			}
+
+			var item2 = document.createElement('li');
+			item2.classList.add( 'phone' );
+			list.append(item2);
+
+			for( var p = 0; map[pais][i].phone.length > p; p++){
+
+				var span = document.createElement('span');
+				item2.append(span);
+				if( pais === 'chile' ){ 
+					item2.innerHTML = 'Phone : +56 ' + map[pais][i].phone[p] + '<br>';
+				} else { 
+					item2.innerHTML = 'Phone : +51 ' + map[pais][i].phone[p] + '<br>';
+				}
+
+			}
+
+			if( map[pais][i].fax){
+
+				var span = document.createElement('span');
+				item2.append(span);
+				if( pais === 'chile' ){ 
+					span.innerHTML = 'Fax : +56 ' + map[pais][i].fax;
+				} else { 
+					span.innerHTML = 'Fax : +51 ' + map[pais][i].fax;
+				}
+
+			}
+
+			if( map[pais][i].agent ){
+
+				var item4 = document.createElement('li');
+				item4.classList.add( 'agent' );
+				list.append(item4);
+				item4.innerHTML = 'Agent : ' + map[pais][i].agent;
+
+			}
+
+			var item5 = document.createElement('li');
+			item5.classList.add( 'mail' );
+			list.append(item5);
+
+			for( var m = 0; map[pais][i].mail.length > m; m++){
+
+				var span = document.createElement('span');
+				item5.append(span);
+				span.innerHTML = map[pais][i].mail[m] + '@bm-maritima.cl <br>';
+
+			}
+				 
+		} 
 
 	}
-
-	var lista = document.querySelectorAll('.sucursal > ul');
-
-	for( var s = 0; lista.length > s; s++ ){
-
-		console.log(lista[s]);
-
-	}
-  		
-	/*
-
-	for( attr in map[suc] ){
-
-		var item = document.createElement('li');
-		list.appendChild(item); 
-
-		for( var d = 0; map[suc][attr].dir.length > d; d++){
-
-			var span = document.createElement('span');
-			item.appendChild(span);
-			span.innerHTML = ` ${map[suc][attr].dir[d]} <br> `;	
-
-		}; 
-
-	}
-
-	*/
-	
-	/*
-
-	for( attr in map[suc] ){
-
-		var item = document.createElement('li');
-		list.appendChild(item); 
-
-		for( var p = 0; map[suc][attr].phone.length > p; p++){
-
-			var span = document.createElement('span');
-			item.appendChild(span);
-			span.innerHTML = ` ${map[suc][attr].phone[p]} <br> `;	
-
-		};  
-
-	}
-	
-	*/
-	
-	/*
-	
-	sucursal.innerHTML = `  
-		<li> ${ map[suc][i].dir } </li>
-		<li> Phone : ${ map[suc][i].phone } </li>
-		<li> Agent : ${ map[suc][i].agent } </li>
-		<li> ${ map[suc][i].mail }@bm-maritima.cl </li>
-	`; 
-
-	*/   
-
-}
+ 
+} 
