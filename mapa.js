@@ -159,8 +159,8 @@ var map = {
 				'San Isidro, Lima.',
 				'Postal Code: 7561258'
 			],  
-			phone: [ '1 2215052' ], 
-			mail: [ 'peru' ]
+			phone: [ '+51 1 2215052' ], 
+			mail: [ 'peru@bm-maritima.cl' ]
 		}, 
 		{
 			name: 'LIMA - CALLAO',
@@ -169,8 +169,8 @@ var map = {
 				'Oficina 603, Piso 6, Callao',
 				'Postal Code: 7561258'
 			],  
-			phone: [ '1 399 68 22', '944 899 844' ], 
-			mail: [ 'callao', 'cbiese' ]
+			phone: [ '+51 1 399 68 22', '+51 944 899 844' ], 
+			mail: [ 'callao@bm-maritima.cl', 'cbiese@bm-maritima.cl' ]
 		}, 
 		{
 			name: 'LIMA - SUPE-PARAMONGA',
@@ -179,8 +179,8 @@ var map = {
 				'Nueva Victoria',
 				'Supe Puerto'
 			],  
-			phone: [ '1 399 68 22', '959 473 270' ], 
-			mail: [ 'supe', 'carlos.chirito' ]
+			phone: [ '+51 1 399 68 22', '+51 959 473 270' ], 
+			mail: [ 'supe@bm-maritima.cl', 'carlos.chirito@bm-maritima.cl' ]
 		}, 
 		{
 			name: 'LIMA - PAITA',
@@ -188,8 +188,8 @@ var map = {
 				'Jr. Independencia N° 167',
 				'Paita'
 			],  
-			phone: [ '73 253 341' ], 
-			mail: [ 'paita', 'martin.coronado' ]
+			phone: [ '+51 73 253 341' ], 
+			mail: [ 'paita@bm-maritima.cl', 'martin.coronado@bm-maritima.cl' ]
 		}, 
 		{
 			name: 'LIMA - BAYOVAR',
@@ -197,8 +197,8 @@ var map = {
 				'Jr. Independencia N° 167',
 				'Paita'
 			],  
-			phone: [ '73 253 341' ], 
-			mail: [ 'bayovar', 'martin.coronado' ]
+			phone: [ '+51 73 253 341' ], 
+			mail: [ 'bayovar@bm-maritima.cl', 'martin.coronado@bm-maritima.cl' ]
 		},
 		{
 			name : 'Lima',
@@ -207,7 +207,7 @@ var map = {
 				'German Schreiber 184, 03rd Floor Office 301',
 				'San Isidro-Lima'
 			],
-			phone: [ '1 221 5052' ],
+			phone: [ '+51 1 221 5052' ],
 			mail: [ 'peru@bm-maritima.pe' ] 
 		},
 		{
@@ -366,7 +366,7 @@ function sucursales(){
 				if( pais === 'chile' ){ 
 					item2.innerHTML = 'Phone : +56 ' + map[pais][i].phone[p] + '<br>';
 				} else { 
-					item2.innerHTML = 'Phone : +51 ' + map[pais][i].phone[p] + '<br>';
+					item2.innerHTML = map[pais][i].phone[p] + '<br>';
 				}
 
 			}
@@ -378,7 +378,7 @@ function sucursales(){
 				if( pais === 'chile' ){ 
 					span.innerHTML = 'Fax : +56 ' + map[pais][i].fax;
 				} else { 
-					span.innerHTML = 'Fax : +51 ' + map[pais][i].fax;
+					span.innerHTML = map[pais][i].fax;
 				}
 
 			}
@@ -399,8 +399,12 @@ function sucursales(){
 			for( var m = 0; map[pais][i].mail.length > m; m++){
 
 				var span = document.createElement('span');
-				item5.append(span);
-				span.innerHTML = map[pais][i].mail[m] + '@bm-maritima.cl <br>';
+				item5.append(span); 
+				if( pais === 'chile' ){ 
+					span.innerHTML = map[pais][i].mail[m] + '@bm-maritima.cl <br>';
+				} else { 
+					span.innerHTML = map[pais][i].mail[m] + '<br>';
+				}
 
 			}
 				 
